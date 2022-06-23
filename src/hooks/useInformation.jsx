@@ -11,8 +11,10 @@ const useInformation = () => {
 
   if (env !== 'local') {
     url = process.env.REACT_APP_API_URL + `/${idUser.id}`;
-  } else (env === 'local' && (idUser.id === '12' || idUser.id === '18')) {
+  } else if (env === 'local' && (idUser.id === '12' || idUser.id === '18')) {
     url = `data/user_${idUser.id}.json`;
+  } else {
+    url = `data/user_12.json`;
   }
 
   const getUser = async () => {

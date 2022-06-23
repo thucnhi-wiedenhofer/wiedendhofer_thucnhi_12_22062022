@@ -31,7 +31,7 @@ function Home() {
     sessionStorage.setItem('env', JSON.stringify(env));
   }
   return (
-    <div className="global container">
+    <div className="fluid-container">
       {isPending && (
         <div className="spinner-container">
           <div className="loading-spinner"></div>
@@ -45,26 +45,26 @@ function Home() {
             <div className="col-lg-1">
               <AsideLeft />
             </div>
-            <div className="frame col-lg-11">
+            <div className="col-lg-11">
               <Heading />
               <div className="row col-lg-12">
-                <div className="graphs col-lg-9">
+                <div className="col-lg-9">
                   <div className="histo col-lg-12">
                     <Activity />
                   </div>
-                  <div className="little-graphs row">
-                    <div className="moy col-lg-4">
+                  <div className="row">
+                    <div className="col-lg-4">
                       <Average />
                     </div>
-                    <div className="radar col-lg-4">
+                    <div className="col-lg-4">
                       <Performance />
                     </div>
-                    <div className="score col-lg-4">
+                    <div className="col-lg-4">
                       <Score />
                     </div>
                   </div>
                 </div>
-                <div className="apports col-lg-3">
+                <div className="col-lg-3">
                   <KeyData />
                 </div>
               </div>
