@@ -6,7 +6,7 @@ import logo from './../../assets/images/logo.svg';
 function Header() {
   let id = JSON.parse(sessionStorage.getItem('idUser'));
   return (
-    <div className="navbar navbar-expand-lg">
+    <div id="header" className="navbar navbar-expand-lg">
       <Link to="/">
         <span className="navbar-brand">
           <img src={logo} alt="logo SportSee" width="210" height="61" />

@@ -1,8 +1,15 @@
 /*  CSS Header section  */
-.navbar {
+.navbar-expand-lg {
   background-color: #020203;
+  box-shadow: 2px 2px 3px #020203;
   height: 91px;
+  min-width: 1024px;
 }
+
+.navbar-brand {
+  margin-left: 15px;
+}
+
 .navbar-nav {
   width: 300px;
   justify-content: space-between;
@@ -14,5 +21,17 @@
   font-weight: 500;
   font-size: 24px;
   text-decoration: none !important;
-  margin-right: 30px;
+  margin-right: 100px;
+}
+
+@media (max-width: 1320px) {
+  .nav-item {
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav-item {
+    margin-right: 40px;
+  }
 }

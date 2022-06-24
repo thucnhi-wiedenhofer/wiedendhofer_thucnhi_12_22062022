@@ -1,0 +1,27 @@
+.aside-left .navbar {
+  background-color: #020203;
+  box-shadow: 2px 2px 3px #020203;
+  width: 117px;
+  height: auto;
+}
+
+.aside-left .navbar-nav {
+  height: 316px;
+  justify-content: space-between;
+  margin-top: 200px;
+  margin-bottom: 180px;
+}
+
+.activity {
+  margin-bottom: 20px;
+}
+
+.copyright {
+  color: #ffff;
+  font-size: 12px;
+  font-weight: 500;
+  writing-mode: tb-rl;
+  transform: rotate(-180deg);
+  line-height: 117px;
+  margin-bottom: 50px;
+}

@@ -10,16 +10,14 @@ function Heading() {
   const { user } = useInformation();
 
   return (
-    <div className="profile col-lg-10">
+    <div className="heading">
       <h1>
         Bonjour
-        <span className="redTitle">
+        <span className="firstname">
           {user && user.data.userInfos.firstName}
         </span>
       </h1>
-      <p className="p_marge">
-        Félicitation ! Vous avez explosé vos objectifs hier 👏
-      </p>
+      <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
     </div>
   );
 }

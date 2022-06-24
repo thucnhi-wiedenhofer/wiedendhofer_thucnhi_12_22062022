@@ -42,30 +42,33 @@ function Home() {
         <>
           <Header />
           <div className="row col-lg-12">
-            <div className="col-lg-1">
+            <div className="aside-left col-lg-1">
               <AsideLeft />
             </div>
+
             <div className="col-lg-11">
-              <Heading />
-              <div className="row col-lg-12">
-                <div className="col-lg-9">
-                  <div className="histo col-lg-12">
-                    <Activity />
+              <div className="container">
+                <Heading />
+                <div className="row col-lg-12">
+                  <div className="col-lg-9">
+                    <div className="col-lg-12">
+                      <Activity />
+                    </div>
+                    <div className="row">
+                      <div className="col-lg-4">
+                        <Average />
+                      </div>
+                      <div className="col-lg-4">
+                        <Performance />
+                      </div>
+                      <div className="col-lg-4">
+                        <Score />
+                      </div>
+                    </div>
                   </div>
-                  <div className="row">
-                    <div className="col-lg-4">
-                      <Average />
-                    </div>
-                    <div className="col-lg-4">
-                      <Performance />
-                    </div>
-                    <div className="col-lg-4">
-                      <Score />
-                    </div>
+                  <div className="col-lg-3">
+                    <KeyData />
                   </div>
-                </div>
-                <div className="col-lg-3">
-                  <KeyData />
                 </div>
               </div>
             </div>
