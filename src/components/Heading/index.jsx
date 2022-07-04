@@ -2,11 +2,11 @@ import React from 'react';
 import './heading.css';
 import useInformation from '../../hooks/useInformation';
 
+/**
+ * @description first name user  and incentive message
+ * @returns (React.ReactElement)
+ */
 function Heading() {
-  /**
-   * @description first name user  and incentive message
-   * @returns (React.ReactElement)
-   */
   const { user } = useInformation();
 
   return (

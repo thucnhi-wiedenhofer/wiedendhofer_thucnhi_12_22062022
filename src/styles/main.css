@@ -1,6 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif !important;
-  height: 100%;
+  max-height: 1024px;
 }
 
 p {
@@ -12,4 +12,37 @@ p {
 h1 {
   color: black !important;
   font-size: 48px !important;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 60%;
+  max-width: 1300px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 1280px) {
+  .main-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1320px) {
+  .container {
+    padding-left: 80px !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    padding-left: 80px !important;
+  }
 }

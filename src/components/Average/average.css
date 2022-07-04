@@ -1,0 +1,16 @@
+.averageSessions {
+  max-width: 258px;
+  height: auto;
+  aspect-ratio: 1/1;
+  background: red;
+  border-radius: 5px;
+  margin-top: 8px;
+  margin-right: 2px;
+  font-family: roboto;
+}
+
+.average-title {
+  font-size: 15px;
+  color: #ffff !important;
+  margin: 29px 25px;
+}

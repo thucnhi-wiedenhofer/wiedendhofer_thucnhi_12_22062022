@@ -41,32 +41,32 @@ function Home() {
       {data && (
         <>
           <Header />
-          <div className="row col-lg-12">
-            <div className="aside-left col-lg-1">
+          <div className="row col-12">
+            <div className="aside-left col-1">
               <AsideLeft />
             </div>
 
-            <div className="col-lg-11">
-              <div className="container">
+            <div className="col-11">
+              <div className="container pt-5">
                 <Heading />
-                <div className="row col-lg-12">
-                  <div className="col-lg-9">
-                    <div className="col-lg-12">
+                <div className="main-container col-12">
+                  <div className="col-9 ">
+                    <div className="col-12">
                       <Activity />
                     </div>
                     <div className="row">
-                      <div className="col-lg-4">
+                      <div className="col-4">
                         <Average />
                       </div>
-                      <div className="col-lg-4">
+                      <div className="col-4">
                         <Performance />
                       </div>
-                      <div className="col-lg-4">
+                      <div className="col-4">
                         <Score />
                       </div>
                     </div>
                   </div>
-                  <div className="col-lg-3">
+                  <div className="col-3 ">
                     <KeyData />
                   </div>
                 </div>

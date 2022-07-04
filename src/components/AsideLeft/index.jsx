@@ -10,7 +10,7 @@ function AsideLeft() {
   return (
     <div className="navbar">
       <ul className="navbar-nav">
-        <li className="activity">
+        <li className="nav-item">
           <NavLink to="">
             <img
               src={yoga_icon}
@@ -21,7 +21,7 @@ function AsideLeft() {
           </NavLink>
         </li>
 
-        <li className="activity">
+        <li className="nav-item">
           <NavLink to="">
             <img
               src={swim_icon}
@@ -31,7 +31,7 @@ function AsideLeft() {
             />
           </NavLink>
         </li>
-        <li className="activity">
+        <li className="nav-item">
           <NavLink to="">
             <img
               src={bike_icon}
@@ -41,7 +41,7 @@ function AsideLeft() {
             />
           </NavLink>
         </li>
-        <li className="activity">
+        <li className="nav-item">
           <NavLink to="">
             <img
               src={gym_icon}

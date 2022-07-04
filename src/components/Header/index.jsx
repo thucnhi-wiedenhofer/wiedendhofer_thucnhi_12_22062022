@@ -28,7 +28,7 @@ function Header() {
 
           <li className="nav-item">
             <NavLink
-              to={`/${id.id}`}
+              to={id === undefined && `/${id.id}`}
               className={(nav) =>
                 nav.isActive ? 'nav-item active' : 'nav-item'
               }
@@ -38,7 +38,7 @@ function Header() {
           </li>
           <li className="nav-item">
             <NavLink
-              to={`/${id.id}`}
+              to={id === undefined && `/${id.id}`}
               className={(nav) =>
                 nav.isActive ? 'nav-item active' : 'nav-item'
               }
@@ -48,7 +48,7 @@ function Header() {
           </li>
           <li className="nav-item">
             <NavLink
-              to={`/${id.id}`}
+              to={id === undefined && `/${id.id}`}
               className={(nav) =>
                 nav.isActive ? 'nav-item active' : 'nav-item'
               }

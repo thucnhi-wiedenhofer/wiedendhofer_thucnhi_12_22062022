@@ -1,5 +1,5 @@
-const numberWithCommas = (x) => {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  };
-  
-  export default numberWithCommas;
+const comma = (x) => {
+  return (x / 1000).toFixed(3).toString().replace('.', ',');
+};
+
+export default comma;

@@ -14,24 +14,23 @@ function Error() {
     <div className="fluid-container">
       <Header />
       <div className="row col-lg-12">
-        <div className="col-lg-1">
+        <div className="aside-left col-lg-1">
           <AsideLeft />
         </div>
-        <div className="col-lg-11">
-          <h1>Error</h1>
-
-          <div className="col-lg-12">
-            <h1>
+        <div className="container col-lg-11">
+          <div className="center col-lg-12">
+            <h1>ERROR</h1>
+            <h2 className="mt-5">
               Only Profiles enable for connection are:
               <br />
               <NavLink to={'/12'}>
-                <h2>Karl</h2>
+                <h3 className="mt-5">Karl</h3>
               </NavLink>
               <br />
               <NavLink to={'/18'}>
-                <h2>Cecilia</h2>
+                <h3>Cecilia</h3>
               </NavLink>
-            </h1>
+            </h2>
           </div>
         </div>
       </div>
