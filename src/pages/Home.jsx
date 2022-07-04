@@ -20,7 +20,7 @@ import '../styles/main.css';
 function Home() {
   sessionStorage.clear();
   const id = useParams();
-  let { data, error, isPending, env } = useFetch(
+  let { data, error, env } = useFetch(
     process.env.REACT_APP_API_URL + `/${id.id}`
   );
 
@@ -32,11 +32,6 @@ function Home() {
   }
   return (
     <div className="fluid-container">
-      {isPending && (
-        <div className="spinner-container">
-          <div className="loading-spinner"></div>
-        </div>
-      )}
       {error && <div>{error}</div>}
       {data && (
         <>
@@ -54,7 +49,7 @@ function Home() {
                     <div className="col-12">
                       <Activity />
                     </div>
-                    <div className="row">
+                    <div className="row-container">
                       <div className="col-4">
                         <Average />
                       </div>

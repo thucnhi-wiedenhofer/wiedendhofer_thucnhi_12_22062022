@@ -39,7 +39,7 @@ option 2: use the API Rest
 
 Installation: [npm Jsdoc installation](https://www.npmjs.com/package/jsdoc)  
 Not necessary if you have already perform a global install.  
-Then, run the command `npm run doc`
+Then, run the command `npm run docs`
 
 ## Technologies
 

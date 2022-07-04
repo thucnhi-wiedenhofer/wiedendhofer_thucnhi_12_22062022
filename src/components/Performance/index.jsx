@@ -23,7 +23,7 @@ function Performance() {
     const kind = userPerformance.data.kind;
     return (
       <div className="performance">
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="99%" height="99%">
           <RadarChart
             outerRadius="65%"
             cx="52%"

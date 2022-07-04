@@ -45,7 +45,7 @@ function Score() {
 
   return (
     <div className="averageScore">
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="99%" height="99%">
         <RadialBarChart
           cx="50%"
           cy="50%"

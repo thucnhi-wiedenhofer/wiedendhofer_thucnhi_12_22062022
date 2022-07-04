@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
 
 /**
- *  @description hook for verifying the state of API.
+ * @description hook for verifying the state of API.
  * if API is disconnected, put env to local
  * ,without breaking the application.
- * @returns { data, isPending, error, env }
+ * @returns { data, error, env }
  */
 
 function useFetch(url) {
   const [data, setData] = useState(null);
   const [env, setEnv] = useState('remote');
-  const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -26,7 +25,6 @@ function useFetch(url) {
           return res.json();
         })
         .then((data) => {
-          setIsPending(false);
           setData(data);
           setError(null);
         })
@@ -34,13 +32,11 @@ function useFetch(url) {
           if (err.name === 'AbortError') {
             console.log('fetch aborted');
           } else if (err.message === 'Failed to fetch') {
-            setIsPending(false);
             setEnv('local');
             setData('local');
             setError(null);
           } else {
             // auto catches network / connection error
-            setIsPending(false);
             setError(err.message);
           }
         });
@@ -50,7 +46,7 @@ function useFetch(url) {
     return () => abortCont.abort();
   }, [url]);
 
-  return { data, isPending, error, env };
+  return { data, error, env };
 }
 
 export default useFetch;

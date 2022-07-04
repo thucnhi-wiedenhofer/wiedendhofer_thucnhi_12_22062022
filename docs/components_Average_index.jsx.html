@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Average/index.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Average/index.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import './average.css';
+import useAverageSession from '../../hooks/useAverage';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  ResponsiveContainer,
+  Tooltip,
+  Legend,
+} from 'recharts';
+
+/**
+ * @description user average sessions in a week Line Chart *
+ *
+ * @returns {React.ReactElement}
+ */
+function Average() {
+  const { userAverageSession } = useAverageSession();
+
+  function CustomToolTip({ active, payload }) {
+    if (active) {
+      return (
+        &lt;div
+          style={{
+            padding: '3px 5px',
+            borderRadius: '2px',
+            background: '#FFF',
+            margin: 'auto',
+          }}
+        >
+          &lt;p style={{ fontSize: '10px' }}>{payload[0].value} min&lt;/p>
+        &lt;/div>
+      );
+    }
+    return null;
+  }
+
+  const renderLegend = () => {
+    return (
+      &lt;div
+        style={{
+          color: '#FFFF',
+          padding: '0 5%',
+          opacity: '0.5',
+        }}
+      >
+        &lt;p className="average-title">
+          Durée moyenne des
+          &lt;br /> sessions
+        &lt;/p>
+      &lt;/div>
+    );
+  };
+
+  if (userAverageSession !== undefined) {
+    return (
+      &lt;div className="averageSessions">
+        &lt;ResponsiveContainer width="99%" height="99%">
+          &lt;LineChart
+            data={userAverageSession &amp;&amp; userAverageSession.data.sessions}
+            onMouseMove={(e) => {
+              if (e.isTooltipActive === true) {
+                let div = document.querySelector('.averageSessions');
+                let windowWidth = div.clientWidth;
+                let mouseXpercentage = Math.round(
+                  (e.activeCoordinate.x / windowWidth) * 100
+                );
+
+                div.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${mouseXpercentage}%, rgba(175,0,0,1.5) ${mouseXpercentage}%, rgba(175,0,0,1.5) 100%)`;
+              }
+            }}
+          >
+            &lt;defs>
+              &lt;linearGradient id="colorLine" x1="0%" y1="0" x2="100%" y2="0">
+                &lt;stop offset="0%" stopColor="#FFF" />
+                &lt;stop offset={`${0}%`} stopColor="red" />
+                &lt;stop offset={`${100}%`} stopColor="#FFF" />
+              &lt;/linearGradient>
+            &lt;/defs>
+            &lt;XAxis
+              dataKey="day"
+              axisLine={false}
+              tickLine={false}
+              tickMargin={20}
+              height={40}
+              tick={{ fill: '#FFF', opacity: 0.5 }}
+              tickSize={8}
+              padding={{ left: 10, right: 10 }}
+              tickFormatter={(day) => {
+                const weekday = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+                return `${weekday[day - 1]}`;
+              }}
+              allowDataOverflow={false}
+            />
+            &lt;Tooltip
+              content={
+                &lt;CustomToolTip
+                  active={true}
+                  payload={
+                    userAverageSession &amp;&amp; userAverageSession.data.sessions
+                  }
+                />
+              }
+              cursor={false}
+            />
+            &lt;Legend verticalAlign="top" align="left" content={renderLegend} />
+            &lt;Line
+              type="natural"
+              dataKey="sessionLength"
+              dot={false}
+              activeDot={{ fill: '#FFF' }}
+              strokeWidth={2}
+              stroke="url(#colorLine)"
+              overflow="hidden"
+            />
+          &lt;/LineChart>
+        &lt;/ResponsiveContainer>
+      &lt;/div>
+    );
+  }
+}
+
+export default Average;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Average">Average</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Heading">Heading</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#KeyData">KeyData</a></li><li><a href="global.html#Performance">Performance</a></li><li><a href="global.html#Score">Score</a></li><li><a href="global.html#useFetch">useFetch</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon Jul 04 2022 14:55:18 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -25,13 +25,16 @@
 }
 
 @media (max-width: 1320px) {
-  .nav-item {
-    margin-right: 50px;
+  #header .navbar-nav {
+    margin-left: 10px;
+  }
+  #header .nav-item {
+    margin-right: 45px;
   }
 }
 
 @media (max-width: 1024px) {
-  .nav-item {
+  #header .nav-item {
     margin-right: 40px;
   }
 }

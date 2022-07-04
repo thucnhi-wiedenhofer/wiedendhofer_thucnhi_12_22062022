@@ -56,7 +56,7 @@ function Average() {
   if (userAverageSession !== undefined) {
     return (
       <div className="averageSessions">
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="99%" height="99%">
           <LineChart
             data={userAverageSession && userAverageSession.data.sessions}
             onMouseMove={(e) => {
