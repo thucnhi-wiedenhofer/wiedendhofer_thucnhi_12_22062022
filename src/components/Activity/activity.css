@@ -1,5 +1,5 @@
 .activity {
-  max-width: 835px;
+  max-width: 850px;
   height: 320px;
   background: #fbfbfb;
   margin-top: 60px;
@@ -31,10 +31,4 @@
   padding-right: 8px;
   color: black;
   font-weight: 500;
-}
-
-@media (max-width: 1280px) {
-  .activity {
-    min-width: 785px;
-  }
 }

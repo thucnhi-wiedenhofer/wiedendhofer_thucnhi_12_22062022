@@ -17,16 +17,15 @@ const useInformation = () => {
     url = `data/user_12.json`;
   }
 
-  const getUser = async () => {
-    try {
-      const { data } = await axios.get(url);
-      setUser(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
+    const getUser = async () => {
+      try {
+        const { data } = await axios.get(url);
+        setUser(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

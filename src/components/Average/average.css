@@ -1,4 +1,4 @@
-.averageSessions {
+.average {
   max-width: 258px;
   height: auto;
   aspect-ratio: 1/1;
@@ -10,7 +10,7 @@
 }
 
 .average-title {
-  font-size: 15px;
+  font-size: 13px;
   color: #ffff !important;
-  margin: 29px 25px;
+  margin: 20px 20px;
 }

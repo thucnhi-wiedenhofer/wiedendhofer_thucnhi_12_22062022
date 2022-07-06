@@ -25,9 +25,3 @@
   line-height: 117px;
   margin-bottom: 50px;
 }
-
-@media (max-width: 1280px) {
-  .aside-left .navbar {
-    height: 950px;
-  }
-}

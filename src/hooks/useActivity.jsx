@@ -17,16 +17,15 @@ const useActivity = () => {
     url = `data/activity_12.json`;
   }
 
-  const getUserActivity = async () => {
-    try {
-      const { data } = await axios.get(url);
-      setUserActivity(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
+    const getUserActivity = async () => {
+      try {
+        const { data } = await axios.get(url);
+        setUserActivity(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getUserActivity();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

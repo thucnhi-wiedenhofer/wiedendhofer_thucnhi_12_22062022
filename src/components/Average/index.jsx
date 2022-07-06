@@ -55,13 +55,13 @@ function Average() {
 
   if (userAverageSession !== undefined) {
     return (
-      <div className="averageSessions">
-        <ResponsiveContainer width="99%" height="99%">
+      <div className="average">
+        <ResponsiveContainer width="92%" height="92%">
           <LineChart
             data={userAverageSession && userAverageSession.data.sessions}
             onMouseMove={(e) => {
               if (e.isTooltipActive === true) {
-                let div = document.querySelector('.averageSessions');
+                let div = document.querySelector('.average');
                 let windowWidth = div.clientWidth;
                 let mouseXpercentage = Math.round(
                   (e.activeCoordinate.x / windowWidth) * 100

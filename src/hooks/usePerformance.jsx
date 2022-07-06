@@ -17,16 +17,15 @@ const usePerformance = () => {
     url = `data/performance_12.json`;
   }
 
-  const getUserPerformance = async () => {
-    try {
-      const { data } = await axios.get(url);
-      setUserPerformance(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
+    const getUserPerformance = async () => {
+      try {
+        const { data } = await axios.get(url);
+        setUserPerformance(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getUserPerformance();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

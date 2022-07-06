@@ -13,7 +13,7 @@
   justify-content: flex-start;
   align-items: center;
   padding: 30px;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 }
 .keyData-item span {
   font-size: 20px;
@@ -28,20 +28,11 @@
 
 @media (max-width: 1280px) {
   .keyData ul {
-    min-width: 785px;
-  }
-}
-
-@media (max-width: 1280px) {
-  .keyData ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     padding: 0px;
+    margin-left: 10px;
   }
   .keyData-item {
-    padding: 6px;
+    padding: 10px;
     height: auto;
   }
 }

@@ -17,16 +17,15 @@ const useAverageSession = () => {
     url = `data/average_12.json`;
   }
 
-  const getUserAverageSession = async () => {
-    try {
-      const { data } = await axios.get(url);
-      setUserAverageSession(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
+    const getUserAverageSession = async () => {
+      try {
+        const { data } = await axios.get(url);
+        setUserAverageSession(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getUserAverageSession();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

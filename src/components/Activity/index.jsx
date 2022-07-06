@@ -42,7 +42,7 @@ function Activity() {
   if (userActivity !== undefined) {
     return (
       <div className="activity">
-        <ResponsiveContainer width="95%" height="100%" aspect={600 / 150}>
+        <ResponsiveContainer width="95%" height="95%" aspect={600 / 150}>
           <BarChart
             data={userActivity && userActivity.data.sessions}
             margin={{
@@ -51,11 +51,11 @@ function Activity() {
               left: 30,
               bottom: 0,
             }}
-            barGap={6}
+            barGap={9}
             stackOffset="expand"
             className="bar-chart"
             style={{
-              padding: '65px 0px',
+              padding: '65px 15px',
               height: 'auto',
             }}
           >
@@ -74,7 +74,7 @@ function Activity() {
               tickFormatter={(number) => number + 1}
               scale="point"
               padding={{ left: 14, right: 14 }}
-              style={{ fontSize: '14px' }}
+              style={{ fontSize: '13px' }}
             />
             <YAxis
               yAxisId="right"
@@ -91,7 +91,7 @@ function Activity() {
               domain={[65, 75]}
               type="number"
               scale="auto"
-              style={{ fontSize: '14px' }}
+              style={{ fontSize: '13px' }}
             />
             <YAxis
               yAxisId="left"
