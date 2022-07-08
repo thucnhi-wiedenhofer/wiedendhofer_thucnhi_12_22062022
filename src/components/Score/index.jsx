@@ -1,17 +1,10 @@
 import React from 'react';
 import './score.css';
 import useInformation from '../../hooks/useInformation';
-import {
-  RadialBarChart,
-  RadialBar,
-  Legend,
-  ResponsiveContainer,
-  PolarAngleAxis,
-  Label,
-} from 'recharts';
+import { Cell, Legend, Pie, PieChart, ResponsiveContainer } from 'recharts';
 
 /**
- * @description current day's score Radial Bar Chart
+ * @description current day's score Pie Chart
  * @returns (React.ReactElement)
  */
 function Score() {
@@ -28,53 +21,37 @@ function Score() {
   const style = {
     top: '50%',
     right: 0,
-    transform: 'translate(0, -50%)',
+    transform: 'translate(-2%, -40%)',
     lineHeight: '24px',
   };
 
-  const renderLegend = () => {
+  function renderLegend() {
     return (
       <div>
-        <div className="radialBarLegend">
+        <div className="Legend">
           <span>{score * 100}%</span>
           <p>de votre objectif</p>
         </div>
       </div>
     );
-  };
+  }
 
   return (
     <div className="averageScore">
-      <ResponsiveContainer width="99%" height="99%">
-        <RadialBarChart
-          cx="50%"
-          cy="50%"
-          innerRadius="80%"
-          outerRadius="80%"
-          barSize={10}
-          data={scoreData}
-          startAngle={90}
-          endAngle={360}
-        >
-          <PolarAngleAxis
-            type="number"
-            domain={[0, 1]}
-            angleAxisId={0}
-            tick={false}
-          />
-          <RadialBar
-            minAngle={300}
-            background={{ fill: '#FBFBFB' }}
-            clockWise
-            dataKey="score"
-            cornerRadius={10}
-            fill="red"
-          />
-          <Label
-            value="Pages of my website"
-            offset={0}
-            position="insideBottom"
-          />
+      <ResponsiveContainer width="100%" height="100%">
+        <PieChart width={160} height={160}>
+          <Pie
+            data={scoreData}
+            dataKey="value"
+            innerRadius={70}
+            outerRadius={80}
+            startAngle={210}
+            endAngle={210 - 450 * score}
+          >
+            {scoreData.map((entry) => (
+              <Cell key={`cell-0`} fill={entry.fillColor} cornerRadius="50%" />
+            ))}
+          </Pie>
           <text
             textAnchor="middle"
             dominantBaseline="middle"
@@ -94,10 +71,9 @@ function Score() {
             verticalAlign="middle"
             wrapperStyle={style}
           />
-        </RadialBarChart>
+        </PieChart>
       </ResponsiveContainer>
     </div>
   );
 }
-
 export default Score;
