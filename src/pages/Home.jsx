@@ -13,7 +13,8 @@ import '../styles/main.css';
 
 /**
  * @description User profile generated with hooks, and components
- * useFetch control if the API is connected
+ * useFetch control if the API is connected.
+ * If error, display page Error
  * @returns { React.ReactElement }
  */
 

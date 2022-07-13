@@ -6,6 +6,7 @@ import '../styles/main.css';
 
 /**
  * @description first page for simulating connection of user
+ * Only mock of 2 users id=12 and id=18
  * @returns { React.ReactElement }
  */
 
